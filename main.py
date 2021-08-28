@@ -37,7 +37,9 @@ RED_SPACESHIP = pygame.transform.scale(RED_SPACESHIP_IMAGE,(SPACESHIP_WIDTH,SPAC
 RED_SPACESHIP = pygame.transform.rotate(RED_SPACESHIP, 270)
 BACKROUND = pygame.image.load(os.path.join('Assets', 'space.png'))
 BACKROUND = pygame.transform.scale(BACKROUND,(WIDTH, HIGHT))
-
+#need to replace the mp3
+#BULLIT_HIT_SOUND = pygame.mixer.Sound('Assets/Grenade+1.mp3')
+#BULLIT_FIRE_SOUND = pygame.mixer.Sound('Assets/Gun+Silencer.mp3')
 def draw_window(red,yellow,red_bullets,yellow_bullets,yellow_hp,red_hp):
 
     WIN.blit(BACKROUND, (0, 0))
@@ -95,7 +97,7 @@ def handle_bullets(yellow_bullets, red_bullets, yellow, red):
             redBullets.remove(bullet)
 def winner_display(winner):
     winner_text = WINNER_FONT.render("The winner is "+winner, 1, WHITE)
-    WIN.blit(winner_text,(WIDTH/2, HIGHT/2))
+    WIN.blit(winner_text,(WIDTH/2-winner_text.get_width()/2, HIGHT/2))
     pygame.display.update()
     pygame.time.delay(5000)
 
@@ -119,21 +121,22 @@ def main():
                 if event.key == pygame.K_LCTRL and len(yellowBullets)<MAX_BULLETS:
                     bullet = pygame.Rect(yellow.x + yellow.width, yellow.y+yellow.height//2-2, 10, 5)
                     yellowBullets.append(bullet)
-
+                    #BULLIT_FIRE_SOUND.play()
                 if event.key == pygame.K_RCTRL and len(redBullets) < MAX_BULLETS:
                     bullet = pygame.Rect(red.x,  red.y + red.height // 2 - 2, 10, 5)
                     redBullets.append(bullet)
-
-             if event == RED_HIT:
-                  red_hp -= 1
-             if event == YELLOW_HIT:
-                  yellow_hp -= 1
-
+                    #BULLIT_FIRE_SOUND.play()
+             if event.type == RED_HIT:
+                #BULLIT_HIT_SOUND.play()
+                red_hp -= 1
+             if event.type == YELLOW_HIT:
+                yellow_hp -= 1
+                #BULLIT_HIT_SOUND.play()
         winner = ""
         if yellow_hp == 0:
-            winner = "Yellow wins"
+            winner = "Red"
         if red_hp == 0:
-            winner = "Red wins"
+            winner = "Yellow"
         if( winner != ""):
             winner_display(winner)
             break
