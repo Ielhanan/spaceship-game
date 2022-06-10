@@ -7,8 +7,8 @@ The game is for 2 players , who fight each other with spaceship.
 - Both have 3 bullits to shoot , you cant shoot more until your bullit is out of screen.
 - Winner is the survivor of battle 
 # Keys
--Player1 move with arrows 
--Player1 shoot with right ctrl 
--Player2 move with a,s,d,w 
--Player2 shoot with left ctrl 
+- Player1 move with arrows 
+- Player1 shoot with right ctrl 
+- Player2 move with a,s,d,w 
+- Player2 shoot with left ctrl 
 # Screenshots
