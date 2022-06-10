@@ -1,5 +1,5 @@
 # Spaceship 2-player game
-This project made by Tech With Tim pygame tutorial https://www.youtube.com/watch?v=jO6qQDNa2UY&t=4586s
+This project based on Tech With Tim pygame tutorial https://www.youtube.com/watch?v=jO6qQDNa2UY&t=4586s
 # Overview
 The game is for 2 players , who fight each other with spaceship.
 - Both have 10 Health Point.
