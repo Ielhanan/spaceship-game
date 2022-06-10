@@ -12,4 +12,5 @@ The game is for 2 players , who fight each other with spaceship.
 - Player2 move with a,s,d,w 
 - Player2 shoot with left ctrl 
 # Screenshots
-![alt text](/screenshot 1.jpg)
+![alt text](/screenshot1.jpg)
+![alt text](/screenshot2.jpg)
